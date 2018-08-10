@@ -1,0 +1,25 @@
+{
+	"instance" : {
+		">" : "MasashiUmezawa 8/4/2018 15:24",
+		"doesNotUnderstand:" : "MasashiUmezawa 8/4/2018 14:39",
+		">=" : "MasashiUmezawa 8/4/2018 15:23",
+		"addFieldAccess:" : "MasashiUmezawa 8/3/2018 16:48",
+		"name" : "MasashiUmezawa 8/4/2018 14:38",
+		"copiedPhrase" : "MasashiUmezawa 8/4/2018 14:37",
+		"=" : "MasashiUmezawa 8/4/2018 15:24",
+		"addComparisonOperator:with:" : "MasashiUmezawa 8/4/2018 15:55",
+		"addElement:" : "MasashiUmezawa 8/3/2018 16:43",
+		"initWithElements:" : "MasashiUmezawa 8/4/2018 14:27",
+		"<" : "MasashiUmezawa 8/4/2018 15:23",
+		"initWithFirstElement:" : "MasashiUmezawa 8/3/2018 16:15",
+		"<=" : "MasashiUmezawa 8/4/2018 15:23",
+		"getElements" : "MasashiUmezawa 8/3/2018 16:14",
+		"tokensOn:" : "MasashiUmezawa 8/4/2018 15:40"
+	},
+	"class" : {
+		"doesNotUnderstand:" : "MasashiUmezawa 8/10/2018 23:07",
+		"elements:" : "MasashiUmezawa 8/4/2018 14:27",
+		"withFieldReferenceNamed:" : "MasashiUmezawa 8/3/2018 16:16",
+		"isMetacelloConfig" : "MasashiUmezawa 8/10/2018 23:07"
+	}
+}

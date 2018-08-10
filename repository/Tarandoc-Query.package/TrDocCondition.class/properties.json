@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "TrDocQueryObject",
+	"category" : "Tarandoc-Query",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"leftHand",
+		"operator",
+		"rightHand"
+	],
+	"name" : "TrDocCondition",
+	"type" : "normal"
+}

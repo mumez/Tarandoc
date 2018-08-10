@@ -1,0 +1,3 @@
+converting
+asDocQueryElement
+	^phrase asDocQueryElement

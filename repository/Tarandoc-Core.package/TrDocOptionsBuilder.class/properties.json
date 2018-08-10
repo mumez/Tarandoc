@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TrOptionsBuilder",
+	"category" : "Tarandoc-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrDocOptionsBuilder",
+	"type" : "normal"
+}

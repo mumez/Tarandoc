@@ -1,0 +1,3 @@
+converting
+asDocQueryObject
+	^self

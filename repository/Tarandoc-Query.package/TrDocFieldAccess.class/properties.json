@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TrDocQueryObject",
+	"category" : "Tarandoc-Query",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrDocFieldAccess",
+	"type" : "normal"
+}

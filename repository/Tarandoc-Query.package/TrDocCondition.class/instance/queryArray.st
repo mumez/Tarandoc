@@ -1,0 +1,3 @@
+converting
+queryArray
+	^ {self conditionArray}

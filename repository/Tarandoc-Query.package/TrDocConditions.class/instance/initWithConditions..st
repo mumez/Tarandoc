@@ -1,0 +1,3 @@
+initialize-release
+initWithConditions: aCollectionOfCondition
+	conditions := aCollectionOfCondition

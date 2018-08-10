@@ -1,0 +1,3 @@
+converting
+asDocQueryElement
+	^self queryString
