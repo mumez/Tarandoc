@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Tarandoc-Tests",
+	"classinstvars" : [
+		"uriString"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrTarandocTest",
+	"type" : "normal"
+}
