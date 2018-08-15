@@ -1,10 +1,11 @@
 {
 	"instance" : {
-		"testInsert" : "MasashiUmezawa 8/12/2018 16:38",
+		"testInsert" : "MasashiUmezawa 8/15/2018 23:57",
 		"tarantalk" : "MasashiUmezawa 8/12/2018 15:39",
+		"testCount" : "MasashiUmezawa 8/15/2018 23:58",
+		"testDelete" : "MasashiUmezawa 8/15/2018 23:57",
 		"testJoin" : "MasashiUmezawa 8/12/2018 17:01",
-		"testDelete" : "MasashiUmezawa 8/12/2018 16:39",
-		"testSelect" : "MasashiUmezawa 8/12/2018 16:49"
+		"testSelect" : "MasashiUmezawa 8/15/2018 23:56"
 	},
 	"class" : {
 		"initialize" : "MasashiUmezawa 8/12/2018 15:39",
