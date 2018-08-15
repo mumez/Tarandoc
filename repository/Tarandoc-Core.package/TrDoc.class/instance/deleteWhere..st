@@ -1,5 +1,3 @@
 actions
 deleteWhere: queryBlock
-	| builderPhrase |
-	builderPhrase := queryBlock value: TrDocPhrase.
-	^self asyncDelete: builderPhrase queryArray
+	^self asyncDelete: (self queryArrayByQuerying: queryBlock)

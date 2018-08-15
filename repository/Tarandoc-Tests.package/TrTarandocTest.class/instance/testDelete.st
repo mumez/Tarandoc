@@ -2,7 +2,7 @@ testing
 testDelete
 	| talk testShirts selectedShirts |
 	talk := self tarantalk.
-	testShirts := (talk ensureSpaceNamed: 'trt_testShirts') asDoc.
+	testShirts := (talk ensureSpaceNamed: 'trt_testShirtsDelete') asDoc.
 	[  
 	testShirts ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ].
 	testShirts insert: { 'id' -> 1. 'size'->'large'. 'color'-> 'red'} asDictionary.

@@ -1,3 +1,3 @@
-private
+wrapping
 wrapWithToTable: expression
-	^'fun.totable(', expression, ')'
+	^self wrapBy: 'totable' expression: expression
