@@ -22,7 +22,7 @@ dogs selectWhere: [ :each | (each id > 0) & (each age = 1) ].
 
 "Delete"
 (dogs deleteWhere: [ :each | each name = 'kuro' ]) sync. "wait delete ends (by default, async)"
-(dogs countWhere: [ :each | each id > 0 ])
+(dogs countWhere: [ :each | each id > 0 ]).
 "-> 3"
 	
 "Join"
@@ -32,10 +32,12 @@ owners insert: { 'id' -> 1. 'surname'->'suzuki'. 'name' -> 'ichiro'  } asDiction
 owners insert: { 'id' -> 2. 'surname'->'yamada'. 'name' -> 'taro'  } asDictionary. "create 'owners' container"
 
 dogs joinTo: owners where: [:dog :owner | dog ownerId = owner id].
+"-> an Array(an Array(a Dictionary('age'->1 'id'->1 'name'->'aka' 'ownerId'->1 'size'->'big' ) a Dictionary('id'->1 'name'->'ichiro' 'surname'->'suzuki' )) an Array(a Dictionary('age'->2 'id'->2 'name'->'shiro' 'ownerId'->1 'size'->'small' ) a Dictionary('id'->1 'name'->'ichiro' 'surname'->'suzuki' )) an Array(a Dictionary('age'->4 'id'->3 'name'->'ao' 'ownerId'->2 'size'->'midium' ) a Dictionary('id'->2 'name'->'taro' 'surname'->'yamada' )))"
 
 ```
 
-# Installation
+## Installation
+
 ```smalltalk
 Metacello new
   baseline: 'Tarandoc';
@@ -45,7 +47,8 @@ Metacello new
 
 And extend your tarantool with [doc module](https://github.com/tarantool/document).
 
-# Running
+## Running
+
 Before running tarantool, you need to require document module in your `script.lua` file.
 
 ```lua
