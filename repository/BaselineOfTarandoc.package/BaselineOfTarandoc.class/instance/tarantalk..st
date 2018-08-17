@@ -3,5 +3,5 @@ tarantalk: spec
 	spec
 		baseline: 'Tarantalk'
 		with: [ spec
-				repository: 'github://mumez/Tarantalk/repository:develop';
+				repository: 'github://mumez/Tarantalk/repository';
 				loads: 'default' ]
