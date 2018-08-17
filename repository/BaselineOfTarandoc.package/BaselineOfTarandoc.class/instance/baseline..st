@@ -5,7 +5,7 @@ baseline: spec
 	spec for: #common do: [
 		self tarantalk: spec.
 		spec
-			package: 'Tarandoc-Core';
+			package: 'Tarandoc-Core' with: [spec requires: #('Tarantalk')];
 			package: 'Tarandoc-Query'.
 		spec
 			package: 'Tarandoc-Tests'.
