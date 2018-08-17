@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ProtoObject",
+	"category" : "Tarandoc-Query",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrDocQuerySeed",
+	"type" : "normal"
+}

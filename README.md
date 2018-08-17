@@ -4,7 +4,7 @@
 
 ```smalltalk
 tarantalk := TrTarantalk connect: 'taran:talk@localhost:3301'.
-dogs := (talk ensureSpaceNamed: 'dogs') asDoc.
+dogs := (tarantalk ensureSpaceNamed: 'dogs') asDoc.
 dogs ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ]. "create 'dogs' container"
 	
 "Insert"
@@ -15,13 +15,18 @@ dogs insert: { 'id' -> 4. 'size'->'midium'. 'name'-> 'kuro'. 'ownerId' -> 2. 'ag
 
 "Select"
 dogs selectWhere: [ :each | each id > 0 ].
+"-> an Array(a Dictionary('age'->1 'id'->1 'name'->'aka' 'ownerId'->1 'size'->'big' ) a Dictionary('age'->2 'id'->2 'name'->'shiro' 'ownerId'->1 'size'->'small' ) a Dictionary('age'->4 'id'->3 'name'->'ao' 'ownerId'->2 'size'->'midium' ) a Dictionary('age'->9 'id'->4 'name'->'kuro' 'ownerId'->2 'size'->'midium' ))"
+
 dogs selectWhere: [ :each | (each id > 0) & (each age = 1) ].
+"-> an Array(a Dictionary('age'->1 'id'->1 'name'->'aka' 'ownerId'->1 'size'->'big' ))"
 
 "Delete"
-dogs deleteWhere: [ :each | each name = 'kuro' ].
+(dogs deleteWhere: [ :each | each name = 'kuro' ]) sync. "wait delete ends (by default, async)"
+(dogs countWhere: [ :each | each id > 0 ])
+"-> 3"
 	
 "Join"
-owners := (talk ensureSpaceNamed: 'owners') asDoc.
+owners := (tarantalk ensureSpaceNamed: 'owners') asDoc.
 owners ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ].
 owners insert: { 'id' -> 1. 'surname'->'suzuki'. 'name' -> 'ichiro'  } asDictionary.
 owners insert: { 'id' -> 2. 'surname'->'yamada'. 'name' -> 'taro'  } asDictionary. "create 'owners' container"
