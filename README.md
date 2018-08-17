@@ -5,7 +5,7 @@
 ```smalltalk
 tarantalk := TrTarantalk connect: 'taran:talk@localhost:3301'.
 dogs := (talk ensureSpaceNamed: 'dogs') asDoc.
-dogs ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ]. "create 'dogs' doc"
+dogs ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ]. "create 'dogs' container"
 	
 "Insert"
 dogs insert: { 'id' -> 1. 'size'->'big'. 'name'-> 'aka'. 'ownerId' -> 1. 'age'->1 } asDictionary.
@@ -24,7 +24,7 @@ dogs deleteWhere: [ :each | each name = 'kuro' ].
 owners := (talk ensureSpaceNamed: 'owners') asDoc.
 owners ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ].
 owners insert: { 'id' -> 1. 'surname'->'suzuki'. 'name' -> 'ichiro'  } asDictionary.
-owners insert: { 'id' -> 2. 'surname'->'yamada'. 'name' -> 'taro'  } asDictionary.
+owners insert: { 'id' -> 2. 'surname'->'yamada'. 'name' -> 'taro'  } asDictionary. "create 'owners' container"
 
 dogs joinTo: owners where: [:dog :owner | dog ownerId = owner id].
 
@@ -41,7 +41,7 @@ Metacello new
 And extend your tarantool with [doc module](https://github.com/tarantool/document).
 
 # Running
-Before running tarantool, you need to require document module in your script.lua file.
+Before running tarantool, you need to require document module in your `script.lua` file.
 
 ```lua
 box.cfg{listen = 3301}
