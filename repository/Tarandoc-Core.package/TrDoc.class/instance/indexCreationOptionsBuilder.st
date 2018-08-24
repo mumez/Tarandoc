@@ -1,0 +1,3 @@
+factory
+indexCreationOptionsBuilder
+	^TrOptionsBuilder forCreateIndex
