@@ -30,9 +30,11 @@
 		"asyncCount:setting:" : "MasashiUmezawa 8/15/2018 23:35",
 		"asyncCreateIndexFor:named:setting:" : "MasashiUmezawa 7/10/2018 23:40",
 		"wrapBy:expression:" : "MasashiUmezawa 8/15/2018 23:10",
+		"ensurePrimaryIdIndex" : "MasashiUmezawa 8/24/2018 11:56",
 		"keyAtFieldNamed:" : "MasashiUmezawa 6/30/2018 14:55",
 		"asyncJoinTo:where:offset:limit:" : "MasashiUmezawa 8/17/2018 23:25",
 		"asyncSelect:setting:" : "MasashiUmezawa 8/15/2018 23:35",
+		"countAll" : "MasashiUmezawa 8/24/2018 12:04",
 		"unflatten:" : "MasashiUmezawa 6/30/2018 14:54",
 		"asyncSelectApplying:query:options:" : "MasashiUmezawa 8/15/2018 23:15",
 		"space" : "MasashiUmezawa 7/10/2018 23:20",
@@ -42,6 +44,7 @@
 		"ensureThirdIndexWithPartsUsing:" : "MasashiUmezawa 8/10/2018 15:35",
 		"joinTo:where:" : "MasashiUmezawa 8/6/2018 23:14",
 		"asyncJoinFor:to:query:offset:limit:" : "MasashiUmezawa 8/6/2018 22:56",
+		"selectAll" : "MasashiUmezawa 8/24/2018 12:05",
 		"space:" : "MasashiUmezawa 7/10/2018 23:21"
 	},
 	"class" : {
