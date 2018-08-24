@@ -1,7 +1,7 @@
 actions-index
 asyncCreateIndexFor: aSpace named: indexName setting: creationSettingsBlock
 	| optionsBuilder indexFuncPart |
-	optionsBuilder := TrOptionsBuilder forCreateIndex.
+	optionsBuilder := self indexCreationOptionsBuilder.
 	creationSettingsBlock value: optionsBuilder.
 	indexFuncPart := 'create_index(',  (aSpace fullSafeName),  ',...)'.
 	^self evalWithReturn: (self fullFunctionName: indexFuncPart)

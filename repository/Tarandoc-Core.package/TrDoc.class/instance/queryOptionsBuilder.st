@@ -1,0 +1,3 @@
+factory
+queryOptionsBuilder
+	^TrDocOptionsBuilder new.

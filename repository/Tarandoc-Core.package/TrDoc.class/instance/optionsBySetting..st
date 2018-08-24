@@ -1,6 +1,6 @@
 private
 optionsBySetting: settingsBlock
 	| optionsBuilder |
-	optionsBuilder := TrDocOptionsBuilder new.
+	optionsBuilder := self queryOptionsBuilder.
 	settingsBlock value: optionsBuilder.
 	^optionsBuilder options
