@@ -1,14 +1,15 @@
 # Tarandoc
 
-[Tarantool](http://tarantool.io) [document module](https://github.com/tarantool/document) wrapper based on [Tarantalk](https://github.com/mumez/Tarantalk)
+[Tarantool](http://tarantool.io) [document module](https://github.com/tarantool/document) wrapper based on [Tarantalk](https://github.com/mumez/Tarantalk).
+
+It is usable as a simple/lightweight JSON document DB.
 
 ## Basic Usage
 
 ```smalltalk
 "Preparing a doc"
 tarantalk := TrTarantalk connect: 'taran:talk@localhost:3301'.
-dogs := (tarantalk ensureSpaceNamed: 'dogs') asDoc.
-dogs ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ].
+dogs := (tarantalk ensureSpaceNamed: 'dogs') asDocWithId.
 ```
 
 ```smalltalk
@@ -37,10 +38,9 @@ dogs selectWhere: [ :each | (each id > 0) & (each age = 1) ].
 
 ```smalltalk
 "Join"
-owners := (tarantalk ensureSpaceNamed: 'owners') asDoc.
-owners ensurePrimaryIndexWithPartsUsing: [ :flds | flds unsignedNamed: 'id' ].
+owners := (tarantalk ensureSpaceNamed: 'owners') asDocWithId.
 owners insert: { 'id' -> 1. 'surname'->'suzuki'. 'name' -> 'ichiro'  } asDictionary.
-owners insert: { 'id' -> 2. 'surname'->'yamada'. 'name' -> 'taro'  } asDictionary. "create 'owners' container"
+owners insert: { 'id' -> 2. 'surname'->'yamada'. 'name' -> 'taro'  } asDictionary.
 
 dogs joinTo: owners where: [:dog :owner | dog ownerId = owner id].
 "-> an Array(an Array(a Dictionary('age'->1 'id'->1 'name'->'aka' 'ownerId'->1 'size'->'big' ) a Dictionary('id'->1 'name'->'ichiro' 'surname'->'suzuki' )) an Array(a Dictionary('age'->2 'id'->2 'name'->'shiro' 'ownerId'->1 'size'->'small' ) a Dictionary('id'->1 'name'->'ichiro' 'surname'->'suzuki' )) an Array(a Dictionary('age'->4 'id'->3 'name'->'ao' 'ownerId'->2 'size'->'midium' ) a Dictionary('id'->2 'name'->'taro' 'surname'->'yamada' )))"
@@ -48,6 +48,15 @@ dogs joinTo: owners where: [:dog :owner | dog ownerId = owner id].
 
 ```smalltalk
 "Insert/Select nested documents"
+talk := TrTarantalk connect: 'taran:talk@localhost:3301'.
+sessions := (talk ensureSpaceNamed: 'sessions') asDocWithId.
+
+sessions insert: {'id'->1. 'token' -> UUID new asString36. 'expires' -> 3600. 'account' -> {'id'->10. 'name'->'Suzuki'. 'address'->{'country'->'JP'} asDictionary} asDictionary} asDictionary.
+sessions insert: {'id'->2. 'token' -> UUID new asString36. 'expires' -> 3600. 'account' -> {'id'->11. 'name'->'Yamada'. 'address'->{'country'->'JP'} asDictionary} asDictionary} asDictionary.
+sessions insert: {'id'->3. 'token' -> UUID new asString36. 'expires' -> 3600. 'account' -> {'id'->12. 'name'->'John'. 'address'->{'country'->'US'} asDictionary} asDictionary} asDictionary.
+
+sessions selectWhere: [ :each | each account address country = 'JP' ].
+"-> an Array(a Dictionary('account'->a Dictionary('address'->a Dictionary('country'->'JP' ) 'id'->10 'name'->'Suzuki' ) 'expires'->3600 'id'->1 'token'->'1k9s43o7f6qw5wyybgizphqgg' ) a Dictionary('account'->a Dictionary('address'->a Dictionary('country'->'JP' ) 'id'->11 'name'->'Yamada' ) 'expires'->3600 'id'->2 'token'->'1k9s43kz03hu0yxt8eswqm78c' ))"
 
 ```
 
