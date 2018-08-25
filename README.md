@@ -27,6 +27,10 @@ dogs selectWhere: [ :each | each id > 0 ].
 
 dogs selectWhere: [ :each | (each id > 0) & (each age = 1) ].
 "-> an Array(a Dictionary('age'->1 'id'->1 'name'->'aka' 'ownerId'->1 'size'->'big' ))"
+
+dogs selectWhere: [ :each | each name = 'aka' ] offset: 0 limit: 1.
+"-> an Array(a Dictionary('age'->1 'id'->1 'name'->'aka' 'ownerId'->1 'size'->'big' ))"
+
 ```
 
 ```smalltalk
